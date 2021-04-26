@@ -19,8 +19,13 @@ build:
 
 .PHONY: push
 push: build
-	@echo "pushing image"
-	docker push $(IMAGE_NAME):latest $(IMAGE_ID)
+	@echo "pushing $(IMAGE_ID)"
+	docker push $(IMAGE_ID)
+
+.PHONY: run
+run: build
+	@echo "running $(IMAGE_NAME):latest"
+	docker run --rm -it -p 514:514/tcp -p 514:514/udp -v $PWD/logs:/logs -v $PWD/example:/etc/syslog-ng ghcr.io/paullockaby/syslog-ng:latest
 
 .PHONY: clean
 clean:
