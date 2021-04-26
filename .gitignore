@@ -1,0 +1,5 @@
+.*.swp
+*~
+
+# ignore the logs directory that we use in our example
+logs
