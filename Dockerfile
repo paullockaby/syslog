@@ -10,4 +10,5 @@ RUN apt-get -q update && apt-get -y upgrade && \
 
 HEALTHCHECK --interval=2m --timeout=3s --start-period=30s CMD /usr/sbin/syslog-ng-ctl stats || exit 1
 VOLUME ["/etc/syslog-ng", "/logs"]
+EXPOSE 514/tcp 514/udp
 ENTRYPOINT ["/usr/sbin/syslog-ng", "-F", "--no-caps"]
