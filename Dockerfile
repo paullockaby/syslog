@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim@sha256:78fd65998de7a59a001d792fe2d3a6d2ea25b6f3f068e5c84881250373577414 AS base
+FROM debian:bullseye-slim@sha256:f75d8a3ac10acdaa9be6052ea5f28bcfa56015ff02298831994bd3e6d66f7e57 AS base
 
 # github metadata
 LABEL org.opencontainers.image.source=https://github.com/paullockaby/syslog-ng
